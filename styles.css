@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -6,7 +7,9 @@
 body{
     background-color: #F1F1F1;
     height: 100svh;
+    font-family: 'Poppins',sans-serif;
 }
+/* Navigation Styles */
 .dashboard__navbar{
     background-color: #1A1A1A;
     padding: 
@@ -20,6 +23,7 @@ body{
 .navbar--items{
     list-style: none;
 }
+/* Search Bar */
 .navbar--items .group{
     width: 480px;
     height: 32px;
@@ -44,4 +48,31 @@ body{
     border: none;
     background-color: transparent;
     color: #B5B5B5;
+}
+/* Profile */
+span.profile{
+    display: flex;
+    justify-content: space-between;
+    gap: .5em;
+}
+.profile__notification,
+.profile__individual{
+    color: #F1F1F1;
+    background-color: #303030;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+}
+.profile__individual{
+    padding: 0 0 0 .5em;
+    gap: .5em;
+}
+.profile--name{
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    background-color: #36FBA1;
+    padding: .5em;
+
 }
