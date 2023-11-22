@@ -15,4 +15,16 @@ body{
 .navbar--content{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.navbar--items{
+    list-style: none;
+}
+.navbar--items input{
+    width: 480px;
+    height: 32px;
+    background-color: #303030;
+    border: 1px solid #616161;
+    border-radius: 7px;
+    padding: 1em;
 }
