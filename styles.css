@@ -20,11 +20,28 @@ body{
 .navbar--items{
     list-style: none;
 }
-.navbar--items input{
+.navbar--items .group{
     width: 480px;
     height: 32px;
     background-color: #303030;
     border: 1px solid #616161;
     border-radius: 7px;
-    padding: 1em;
+    display: flex;
+    gap: 10px;
+    padding-right: 1em;
+
+}
+.search__container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
+.navbar--items input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #B5B5B5;
 }
