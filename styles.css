@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -19,9 +19,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1em;
 }
 .navbar--items{
     list-style: none;
+    /* flex: 1; */
 }
 /* Search Bar */
 .navbar--items .group{
@@ -33,7 +35,7 @@ body{
     display: flex;
     gap: 10px;
     padding-right: 1em;
-
+    
 }
 .search__container{
     height: 100%;
@@ -68,11 +70,107 @@ span.profile{
     padding: 0 0 0 .5em;
     gap: .5em;
 }
+.individual__name{
+    font-size: 12px;
+}
 .profile--name{
     display: flex;
     align-items: center;
     border-radius: 7px;
     background-color: #36FBA1;
     padding: .5em;
-
+    font-weight: 700;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+/* Mobile Responsiveness */
+@media(max-width: 375px){
+    .dashboard__navbar{
+        padding: 
+        12px 5px 12px 5px !important;
+    }
+    .navbar--content{
+        gap: .5em;
+    }
+    .logo__wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .logo-icon{
+        width: 22px;
+        height: 22px;
+    }
+    .navbar--items .group{
+        width: 168px !important;
+        height: 32px;
+        gap: 1px;
+    }
+    .profile__individual{
+        margin-left: 0;
+    }
+    .profile__notification{
+        padding: .3em !important;
+    }
+    .profile--name{
+        padding: .3em !important;
+    }
+    span.profile{
+        gap: .2em;
+        justify-content: flex-end;
+    }
+}
+@media(max-width: 480px){
+    .logo-word,
+    .individual__name{
+      display: none;
+      visibility: hidden;
+    }
+    .dashboard__navbar{
+        background-color: #1A1A1A;
+        padding: 
+        12px 2px 12px 2px;
+    }
+    .navbar--items .group{
+        width: 238px;
+        height: 32px;
+        gap: 1px;
+    }
+    .navbar--content{
+        gap: .5em;
+    }
+    
+         .profile__individual{
+             padding: 0 0 0 0;
+         }
+    .profile--name{
+        padding: .5em;
+    }
+  }
+  /* Bigger Screens */
+@media(min-width: 480px){
+    .logo-icon{
+      display: none;
+      visibility: hidden;
+    }
+  }
