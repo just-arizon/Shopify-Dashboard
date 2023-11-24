@@ -22,7 +22,8 @@ body{
     align-items: center;
     gap: 1em;
 }
-.navbar--items{
+.navbar--items,
+.options__items{
     list-style: none;
     /* flex: 1; */
 }
@@ -144,10 +145,93 @@ div.progress div.bar > .bar__body{
     background-color: #1A1A1A;
     border-radius: 4px;
 }
-.sub--img svg{
+ul.plan__options{
+    background-color: #f3f3f3;
+}
+li.options__items{
+    padding: 
+    8px 8px 12px 8px;
+    margin-top: 2em;
+    display: flex;
+}
+.checkbox__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+}
+.checkbox__content{
+    display: flex;
+    gap: .7em;
 }
 
-
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 30px;
+    user-select: none;
+  }
+  
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: .7em;
+    width: .7em;
+    border-radius: 50%;
+    background: #ffeded38;
+    transition: all 0.2s ease;
+    border: 4px dashed #303030;
+  }
+  
+  .checkmark {
+    opacity: 0.4;
+  }
+  
+  .container input:checked ~ .checkmark {
+    background: #1A1A1A;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container .checkmark:after {
+    left: 0.05em;
+    width: 0.15em;
+    height: 0.3em;
+    border: solid rgb(255, 255, 255);
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+  }
+.plan_btn{
+    width: 160px;
+    color: #F1F1F1;
+    padding: .38em .75em;
+    border-radius: 0.375rem;
+border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
+border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
+border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
+background: #404040;
+box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+cursor: pointer;
+}
 
 
 
@@ -268,6 +352,9 @@ div.progress div.bar > .bar__body{
     }
     .plan__header{
         border-radius: 0;
+    }
+    .sub--img{
+        display: none;
     }
   }
   /* Bigger Screens */
