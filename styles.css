@@ -111,8 +111,41 @@ span.text{
     position: relative;
     bottom: .7em;
 }
-
-
+.plan__body{
+    border-radius: 5px;
+    padding: 1em;
+    background-color: #ffffff;
+    margin-top: 1em;
+}
+.sub__container{
+    display: flex;
+    justify-content: space-between;
+    gap: .8em;
+    width: 100%;
+}
+.heading{
+    font-weight: 700;
+}
+div.progress{
+ margin-top: .7em;
+ display: flex;
+ gap: .5em;
+}
+div.progress div.bar{
+    width: 72px;
+    height: 4px;
+    background-color: #B5B5B5;
+    border-radius: 4px;
+    align-self: center;
+}
+div.progress div.bar > .bar__body{
+    width: 18px;
+    height: 4px;
+    background-color: #1A1A1A;
+    border-radius: 4px;
+}
+.sub--img svg{
+}
 
 
 
@@ -231,7 +264,7 @@ span.text{
     }
     .dashboard__content{
         padding: 0;
-        margin-top: 1em;
+        margin-top: 2em;
     }
     .plan__header{
         border-radius: 0;
