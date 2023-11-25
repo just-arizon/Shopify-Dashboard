@@ -1,9 +1,15 @@
 // Bell Notification
-document.querySelector('#bell').addEventListener('click', () => {
-    const bellMenu = document.querySelector('.notification__wrapper');
-    bellMenu.classList.toggle('show');
+document.querySelector('.bell').addEventListener('click', () => {
+        const bellMenu = document.querySelector('.notification__wrapper');
+        bellMenu.classList.toggle('show');
+    
+    });
+document.querySelector('.profiler').addEventListener('click', () => {
+        const profilerMenu = document.querySelector('.profiler__wrapper');
+        profilerMenu.classList.toggle('show');
+    
+    });
 
-})
 
 
 // Function that gets rid of the notification bar
