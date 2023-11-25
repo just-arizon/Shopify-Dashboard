@@ -153,15 +153,16 @@ span.profile{
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
-.items--one{
+.items--one,
+.items--two{
     width: 100%;
-    font-size: 1.2em;
     border-bottom: 1px solid var(--border-bg);
     padding: .8em;
     font-family: 'Inter', sans-serif;
-
+    
 }
-.items--one .item__one{
+.items--one .item__one,
+.item_{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -170,7 +171,7 @@ span.profile{
     border: 0;
     background-color: var(--borderpres-bg);
     font-family: 'Inter', sans-serif;
-    
+    font-size: 1em;
 }
 .profiler__name,
 .profiler_letters{
@@ -179,7 +180,7 @@ span.profile{
     
 }
 .item__sibling,
-.list__links{
+#texter{
     background-color: transparent;
     width: 100%;
     display: flex;
@@ -187,7 +188,11 @@ span.profile{
     gap: .5em;
     border: 0;
     font-family: 'Inter', sans-serif;
-
+    font-size: 1em;
+    
+}
+a{
+    color: var(--navbar-bg);
 }
 /* Dashboard Styles */
 .dashboard__container{
