@@ -1,7 +1,19 @@
-const chevron = document.querySelector("#chevron");
-const planOptions = document.querySelector(".plan__body");
+// Bell Notification
+document.querySelector('#bell').addEventListener('click', () => {
+    const bellMenu = document.querySelector('.notification__wrapper');
+    bellMenu.classList.toggle('show');
 
-chevron.addEventListener("click", () => {
-    planOptions.classList.toggle("open");
-});
+})
 
+
+// Function that gets rid of the notification bar
+
+const disableElements = document.querySelectorAll('[data-cancel]');
+const enabledElements = document.querySelector('.plan__header');
+
+function removeContent(params) {
+    enabledElements.classList.toggle('remove')
+}
+disableElements.forEach(disableElement => {
+    disableElement.addEventListener('click', removeContent)
+})
