@@ -172,6 +172,9 @@ span.profile {
   font-weight: 700;
   font-family: "Inter", sans-serif;
 }
+.profiler_letters{
+    transition: all 100ms ease-in;
+}
 .items--one,
 .items--two,
 .items--three {
@@ -266,6 +269,7 @@ a {
   justify-content: space-between;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
+  border-radius: 0.5rem;
 }
 span.text {
   align-self: center;
@@ -316,7 +320,7 @@ span.text {
     font-size: 0.7em;
   }
   .profile--name {
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
   }
   .navbar--items .group {
     width: 50px !important;
@@ -329,37 +333,30 @@ span.text {
     padding: 12px 5px 12px 5px !important;
   }
   .navbar--content {
-    gap: 0.5em;
+    gap: 0.2em;
   }
 
   .logo__wrapper {
     display: flex;
     align-items: center;
   }
-  .logo__wrapper img {
-    /* margin-left: 2em; */
-  }
-  .logo-icon {
-    width: 22px;
-    height: 22px;
-  }
   .search__container {
     top: 1.45em;
   }
   .navbar--items .group {
-    width: 168px !important;
+    max-width: 168px !important;
     height: 32px;
     gap: 1px;
   }
   .profile__individual {
     margin-left: 0;
   }
-  .profile__notification {
+  /* .profile__notification {
     padding: 0.3em !important;
   }
   .profile--name {
     padding: 0.3em !important;
-  }
+  } */
   span.profile {
     gap: 0.2em;
     justify-content: flex-end;
@@ -375,17 +372,8 @@ span.text {
     background-color: #1a1a1a;
     padding: 12px 2px 12px 2px;
   }
-  .flex1 {
-    flex: 0.5;
-  }
-  .flex2 {
-    flex: 2;
-  }
-
   .navbar--items .group {
-    width: 238px;
-    height: 32px;
-    gap: 1px;
+    width: 225px !important;
   }
   .search__container {
     top: 1.45em;
@@ -395,7 +383,7 @@ span.text {
     margin-right: 0.4em !important;
   }
   .navbar--content {
-    gap: 0.5em;
+    gap: 0.2em;
   }
 
   .profile__individual {
@@ -403,18 +391,17 @@ span.text {
   }
   .profile--name,
   .profile__notification {
-    padding: 0.7em !important;
+    padding: 0.375rem !important;
   }
   .profile--name {
     /* height: 3.2em; */
-    padding: 1.015em 0.7em !important;
+    padding:  0.5625rem 0.3125rem 0.625rem 0.3125rem !important;
   }
   .dashboard__content {
     padding: 0;
     margin-top: 2em;
   }
   .plan__header {
-    border-radius: 0;
   }
   .sub--img {
     display: none;
