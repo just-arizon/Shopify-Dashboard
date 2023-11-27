@@ -52,6 +52,7 @@ labelHeader.addEventListener("click", handleClick);
 
 let openContent = null; // Variable to keep track of the currently open content
 
+let previousAccordionLabels = []; // Variable to keep track of the previously active accordion labels
 
 // Select shopping items
 const shoppingItems = document.querySelectorAll(".shopping-item-checkbox");
@@ -78,7 +79,6 @@ function handleMarkAsDone(item) {
     const notCompletedIcon = item.querySelector("#not-completed-icon");
     const spinningBtn = item.querySelector("#animated-spinning-icon");
     const accordionLabel = item.querySelectorAll(" .accordion__label");
-    // const openContent = item.querySelector(".accordion__content");
 
     notCompletedIcon.classList.add("hidden");
     spinningBtn.classList.remove("hidden");
@@ -91,7 +91,11 @@ function handleMarkAsDone(item) {
         // Close the previously open content
         if (openContent) {
             openContent.classList.remove("active");
-
+              // Reset the background color of the previous accordion labels
+              previousAccordionLabels.forEach(label => {
+                label.style.backgroundColor = 'transparent';
+            }
+              )
         }
 
         // Set the current open content
@@ -99,9 +103,15 @@ function handleMarkAsDone(item) {
         openContent.classList.add("active");
         accordionLabel.forEach(label => {
             label.style.backgroundColor = '#f3f3f3'
-        })
+        });
+
+        // Update the previousAccordionLabels to the current active accordion labels
+        previousAccordionLabels = accordionLabel;
 
     }, 2000);
+;
+  // Update the previousAccordionLabel to the current active accordion label
+  previousAccordionLabel = accordionLabel[0]; // You may need to adjust this based on your HTML structure
 
     item.classList.add("check-done");
 }
@@ -110,7 +120,6 @@ function handleMarkAsNotDone(item) {
     const completedIcon = item.querySelector("#completed");
     const spinningBtn = item.querySelector("#animated-spinning-icon");
     const notCompletedIcon = item.querySelector("#not-completed-icon");
-    const openContent = item.querySelector(".accordion__content");
     const accordionLabel = item.querySelectorAll(" .accordion__label");
 
     completedIcon.classList.add("hidden");
