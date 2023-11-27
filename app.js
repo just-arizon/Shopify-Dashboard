@@ -29,12 +29,7 @@ disableElements.forEach(disableElement => {
   // Select the element with the class 'label__header'
   const labelHeader = document.querySelector(".label__header");
   
-//   Select shopping item
-  const shoppingBtn = document.querySelector("#shopping-item-checkbox");
-  const spinningBtn = document.querySelector("#animated-spinning-icon");
-  const notCompletedBtn = document.querySelector("#not-completed-icon");
-  const completedBtn = document.querySelector("#completed");
-
+  
  function handleClick() {
     const contentElement = document.querySelector("#content");
     contentElement.classList.toggle("active");
@@ -52,50 +47,69 @@ disableElements.forEach(disableElement => {
     });
 }
 
-function handleMarkAsDone(){
-    notCompletedBtn.classList.add("hidden");
+labelHeader.addEventListener("click", handleClick);
 
+
+
+// Select shopping items
+const shoppingItems = document.querySelectorAll(".shopping-item-checkbox");
+const spinningBtn = document.querySelector("#animated-spinning-icon");
+const notCompletedBtn = document.querySelector("#not-completed-icon");
+const completedBtn = document.querySelector("#completed");
+
+function toggleTaskStatus(item) {
+    const notCompletedIcon = item.querySelector("#not-completed-icon");
+    const completedIcon = item.querySelector("#completed");
+
+    notCompletedIcon.classList.add("hidden");
+    completedIcon.classList.remove("hidden");
+}
+
+function handleMarkAsDone(item) {
+    const notCompletedIcon = item.querySelector("#not-completed-icon");
+    const spinningBtn = item.querySelector("#animated-spinning-icon");
+
+    notCompletedIcon.classList.add("hidden");
     spinningBtn.classList.remove("hidden");
 
     setTimeout(() => {
         spinningBtn.classList.add("hidden");
-        
-         
-        completedBtn.classList.remove("hidden");
+        toggleTaskStatus(item);
     }, 2000);
 
-    setInterval(() => {
-     
-    },1000)
-
-    shoppingBtn.classList.add("check-done");
+    item.classList.add("check-done");
 }
 
+function handleMarkAsNotDone(item) {
+    const completedIcon = item.querySelector("#completed");
 
-function handleMarkAsNotDone(){
- completedBtn.classList.add("hidden");
- spinningBtn.classList.remove("hidden");
+    completedIcon.classList.add("hidden");
+    spinningBtn.classList.remove("hidden");
 
- setTimeout(() => {
-    spinningBtn.classList.add("hidden");
- 
-    notCompletedBtn.classList.remove("hidden");
+    setTimeout(() => {
+        spinningBtn.classList.add("hidden");
+        toggleTaskStatus(item);
+    }, 2000);
 
- },2000)
+    item.classList.remove("check-done");
 }
 
-function handleCompletedOrNot() {
-  const markAsDone = shoppingBtn.classList.contains("check-done");
+function handleCompletedOrNot(event) {
+    const item = event.currentTarget.closest(".accordion__contentbox");
+    if (!item) return;
 
-  if(markAsDone){
-    handleMarkAsNotDone();
+    const markAsDone = item.classList.contains("check-done");
 
-  }else{
-    handleMarkAsDone();
-
-  }
+    if (markAsDone) {
+        handleMarkAsNotDone(item);
+    } else {
+        handleMarkAsDone(item);
+    }
 }
 
-  labelHeader.addEventListener("click", handleClick);
-  shoppingBtn.addEventListener("click", handleCompletedOrNot);
+shoppingItems.forEach((item) => {
+    item.addEventListener("click", handleCompletedOrNot);
+});
+
+  
   

@@ -321,9 +321,15 @@ span.text {
   transition: 0.5s;
 }
 .accordion__contentbox {
-  padding: 0.5em 1em;
-  /* visibility: hidden; */
+  padding: 2.5em 1em;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__content > p{
+  /* padding: 2em; */
+  /* visibility: hidden; */
 }
 .label {
   padding: 1em;
@@ -449,7 +455,7 @@ button.checker:hover svg{
 #content.active {
   visibility: visible; 
     overflow: hidden;
-    height:200px;
+    height:500px;
 }
 
 
