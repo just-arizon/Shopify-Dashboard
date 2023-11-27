@@ -82,13 +82,18 @@ function handleMarkAsDone(item) {
 
 function handleMarkAsNotDone(item) {
     const completedIcon = item.querySelector("#completed");
+    const spinningBtn = item.querySelector("#animated-spinning-icon");
+    const notCompletedIcon = item.querySelector("#not-completed-icon");
+
 
     completedIcon.classList.add("hidden");
     spinningBtn.classList.remove("hidden");
-
+    
+    
     setTimeout(() => {
         spinningBtn.classList.add("hidden");
-        toggleTaskStatus(item);
+        notCompletedIcon.classList.remove("hidden");
+
     }, 2000);
 
     item.classList.remove("check-done");
