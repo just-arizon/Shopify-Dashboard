@@ -61,9 +61,25 @@ const spinningBtn = document.querySelector("#animated-spinning-icon");
 const notCompletedBtn = document.querySelector("#not-completed-icon");
 const completedBtn = document.querySelector("#completed");
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const parent = document.querySelector('#content');
+    const indexToFocus = 0;  // Replace with the index you want to focus on
+
+    // Using children
+    const childElementToFocus = parent.children[indexToFocus];
+    
+    console.log(childElementToFocus);
+    // Add the 'active' class to make it open
+    childElementToFocus.classList.add('additionClass');
+});
+
 accordionLabel.forEach(label => {
     label.style.backgroundColor = 'transparent'
-})
+});
+
+
+
 
 // console.log(accordionItems);
 function toggleTaskStatus(item) {
@@ -125,6 +141,9 @@ function handleMarkAsNotDone(item) {
     completedIcon.classList.add("hidden");
     spinningBtn.classList.remove("hidden");
     
+    
+
+
     setTimeout(() => {
         spinningBtn.classList.add("hidden");
         notCompletedIcon.classList.remove("hidden");
@@ -136,8 +155,7 @@ function handleMarkAsNotDone(item) {
 
 function handleCompletedOrNot(event) {
     const item = event.currentTarget.closest(".accordion__contentbox");
-    if (!item) return;
- 
+    // if (!item) return;
 
     const markAsDone = item.classList.contains("check-done");
 
@@ -146,11 +164,12 @@ function handleCompletedOrNot(event) {
     } else {
         handleMarkAsDone(item);
     }
+
 }
 
 shoppingItems.forEach((item) => {
     item.addEventListener("click", handleCompletedOrNot);
 });
 
-  
-  
+
+
