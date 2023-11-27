@@ -119,11 +119,6 @@ function handleMarkAsNotDone(item) {
     setTimeout(() => {
         spinningBtn.classList.add("hidden");
         notCompletedIcon.classList.remove("hidden");
-        
-         // Close the previously open content
-         if (openContent) {
-            openContent.classList.remove("active");
-         }
 
     }, 2000);
 
