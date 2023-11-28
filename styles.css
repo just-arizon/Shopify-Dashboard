@@ -33,7 +33,7 @@ body {
 }
 .navbar--content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
@@ -41,6 +41,8 @@ body {
 .options__items {
   list-style: none;
   /* flex: 1; */
+}
+.navbar--items.flex2{
 }
 /* Search Bar */
 .navbar--items .group {
@@ -81,7 +83,7 @@ body {
 span.profile {
   display: flex;
   justify-content: space-between;
-  gap: 0.5em;
+  
 }
 .profile__notification,
 .profile__individual {
@@ -93,6 +95,7 @@ span.profile {
   border-radius: 7px;
   cursor: pointer;
   transition: all 100ms ease-in;
+  font-family: 'Inter', sans-serif;
 }
 
 .profile__individual:hover {
@@ -766,7 +769,7 @@ border-top-right-radius: 0.625rem;
     margin-right: 0.4em !important;
   }
   .navbar--content {
-    gap: 0.2em;
+    gap: 0.4em;
   }
 
   .profile__individual {
@@ -807,7 +810,7 @@ border-top-right-radius: 0.625rem;
     justify-content: space-between !important;
   }
   .navbar--items.flex2{
-    padding: 0 .3em !important;
+    /* padding: 0 .3em !important; */
     flex: 3;
   }
   #content.active {
@@ -855,7 +858,11 @@ ul li:nth-child(5) .accordion__content.active{
     border-radius: 0;
   }
   .navbar--items.flex2{
-    padding: 0 2em !important;
+    /* padding: 0 2em !important; */
+    flex: 3;
+  }
+  .navbar--items .group {
+    width: 298px !important;
   }
   .individual__name {
     display: none;
@@ -863,24 +870,25 @@ ul li:nth-child(5) .accordion__content.active{
   }
 }
 @media (min-width: 444px) and (max-width: 480px){
-  .navbar--items.flex2{
+  /* .navbar--items.flex2{
     padding: 0 2em !important;
-  }
+  } */
 }
 @media (min-width: 480px) and (max-width: 630px) {
   .navbar--items .group {
-    width: 198px !important;
+    /* width: 198px !important; */
     height: 32px;
     gap: 1px;
   }
-  .profile--name {
-    padding: 0.7em;
+  .profile__individual {
+   background-color: transparent;
   }
 }
 @media (min-width: 630px) and (max-width: 751px) {
+ 
   .navbar--items .group {
-    width: 268px;
-    max-width: 398px !important;
+    width: 368px;
+    min-width: 208px !important;
     height: 32px;
     gap: 1px;
   }
@@ -893,13 +901,23 @@ ul li:nth-child(5) .accordion__content.active{
 }
 @media (min-width: 751px) and (max-width: 839px) {
   .navbar--items .group {
-    /* width: 268px !important; */
+    width: 368px !important;
     height: 32px;
     gap: 1px;
+  }
+  .flex2{
+    justify-content: center;
   }
   .dashboard__container {
     padding: 5em !important;
   }
+
+}
+
+
+@media (min-width: 839px) and (max-width: 980px) {
+
+
 }
 
 @media (min-width: 1000px){
